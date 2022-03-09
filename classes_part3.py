@@ -1,6 +1,6 @@
-
 class Item:
-    
+    all = []
+    val = 5
     def __init__(self, name, price, **kwargs):  # constructor function  # initialize
         #  kwargs
         print("Initialized The object")
@@ -8,6 +8,11 @@ class Item:
         self.price = price
         self.discount = kwargs.get("discount", None)
         self.text = kwargs.get("text", None)
+        Item.all.append(self)
+
+    def value_of_item(self):
+        a = 5
+        return a  # returning "a" because it is being returned
 
     def calculate_total_price(self):
         price = self.price
@@ -28,16 +33,13 @@ class Item:
     def show_text(self):
         return self.text
 
+    def __repr__(self):  # str --> string, repr --> represent
+        return f"{self.name} ({self.price})"
 
-item1 = Item(name="Shirt", price=50, discount=10, text="Hello")  # Item().__init__()
-# item1.name = "Shirt"
-# item1.price = 50
-# item1.discount = 10
+    def __str__(self):  # magic method, dunder .. method 
+        pass
 
-# item1.change_price(40)
 
-total = item1.calculate_total_price()
-print("TOTal price ", str(total))
-print(item1.show_text())
-print("\n")
+i1 = Item(name="phone", price=50)
+i2 = Item(name="laptop", price=100)
 
