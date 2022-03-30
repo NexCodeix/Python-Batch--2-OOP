@@ -59,7 +59,7 @@ class MobilePhone(Item):
 
         MobilePhone.all.append(self)
 
-    def show_text(self):
+    def show_text(self):  # method overriding
         # print(super().show_name())
         return super().show_text()
 
