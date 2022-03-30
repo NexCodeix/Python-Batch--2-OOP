@@ -67,7 +67,7 @@ class Item:
         return f"{self.__name} ({self.price})"
 
     def __str__(self):  # magic method, dunder .. method 
-        pass
+        return f"{self.__name} ({self.price}, {self.discount})"
 
     def __connect(self, smtp_server):
         print(f"CONNECTING TO {smtp_server}")
@@ -89,6 +89,8 @@ class Item:
 
 
 Item.instantiate_from_csv()
+item1 = Item.all[1]
+item1.send_email()
 # Abstraction   # class level -- > function_call but not in instance level
 
 # item1.send_email()
