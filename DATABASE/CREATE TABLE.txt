@@ -1,0 +1,71 @@
+CREATE TABLE IF NOT EXISTS employee (
+	"ID" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+	Name TEXT NOT NULL,
+	Age INTEGER NOT NULL,
+	Height INTEGER NOT NULL,
+	Phone TEXT NOT NULL,
+	"Date Of Birth" TEXT NOT NULL
+)
+
+
+SELECTION:
+
+SELECT Name, Age, Height, "Date of Birth", Phone FROM employee 
+SELECT * FROM employee
+SELECT * FROM employee WHERE name="John"
+SELECT Name, Age FROM employee WHERE name="John"
+SELECT * FROM employee WHERE name="John" OR Age=40
+SELECT * FROM employee WHERE name="John" OR Age>=40
+SELECT * FROM employee WHERE (name="John" OR Age>=40) AND Height > 45
+
+
+INSERTION:
+INSERT INTO employee (
+	Name, Age, Height, Phone, "Date of Birth"
+) VALUES ("Corey", 20, 5, "223213", "213213")
+
+
+INSERT INTO employee (Name, Age, Height, Phone, "Date of Birth") 
+VALUES 
+("Corey", 20, 5, "223213", "213213"),
+("Corey2", 20, 5, "223213", "213213"),
+("Corey3", 20, 5, "223213", "213213"),
+("Corey4", 20, 5, "223213", "213213"),
+("Corey5", 20, 5, "223213", "213213")
+
+DELETING:
+
+DELETE FROM employee WHERE name="Corey5" OR Age=20
+DELETE FROM employee WHERE name LIKE "Corey%"
+
+UPDATING:
+
+UPDATE employee
+SET 
+name="Karim",
+age=45
+WHERE name="Corey2"
+
+UPDATE employee
+SET 
+name="Karim",
+age=60
+WHERE name LIKE "Corey%"
+
+
+ALTER TABLE employee RENAME TO "Employees"
+
+ALTER TABLE Employees ADD COLUMN Weight INTEGER DEFAULT 50 NOT NULL 
+
+
+UPDATE Employees
+SET 
+Gender = "Male"
+
+DELETE FROM Employees 
+
+SELECT * FROM Employees ORDER BY "name" ASC
+SELECT * FROM Employees ORDER BY "name" DESC
+
+SELECT * FROM Employees ORDER BY "name" ASC, "Height" DESC
+
