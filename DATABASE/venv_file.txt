@@ -1,0 +1,5 @@
+pip install virtualenv  (downloaded library)
+virtualenv venv  (initializing the virtual env)
+venv --> Scripts --> activate.bat
+
+venv\Scripts\activate.bat  (init the activate file)
