@@ -60,6 +60,7 @@ class Item:
 Item.instantiate_from_csv()
 print(Item.all)
 
-
+item = Item.all[0]
+item.change_price(80)
 print(Item.is_integer(10))
 
